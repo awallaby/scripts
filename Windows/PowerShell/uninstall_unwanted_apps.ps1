@@ -1,6 +1,6 @@
 <#
 .DESCRIPTION
-    Uninstalled unwanted apps
+    Uninstall unwanted apps
 .LANGUAGE
     PowerShell
 .TIMEOUT
