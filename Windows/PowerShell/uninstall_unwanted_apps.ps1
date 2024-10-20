@@ -15,7 +15,7 @@ $datetime   = Get-Date -f 'yyyyMMddHHmmss'
 $filename   = "Transcript-${script_name}-${datetime}.log"
 Start-Transcript -Path (Join-Path $log_path -ChildPath $filename)
 
-#$unwanted_win32_app_names = @('GoTo Opener', 'Zoom(64bit)', 'Teams Machine-Wide Installer', 'Zoom', 'Adobe Acrobat (64-bit)', 'Adobe Refresh Manager')
+$unwanted_win32_app_names = @('GoTo Opener', 'Zoom(64bit)', 'Teams Machine-Wide Installer', 'Zoom', 'Adobe Acrobat (64-bit)', 'Adobe Refresh Manager')
 Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -in $unwanted_win32_app_names } | ForEach-Object { $_.Uninstall() }
 
 # $unwanted_package_names = @('WinRAR 6.11 (64-bit)', 'Mozilla Firefox (x64 en-US)', 'AnyDesk', 'WebAdvisor by McAfee')
